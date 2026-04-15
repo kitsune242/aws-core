@@ -8,7 +8,7 @@ on:
 
 jobs:
   terraform-plan:
-    uses: roche-oli/oli-poc-common/.github/workflows/terraform.yml@v1.0.0
+    uses: kitsune242/aws-common/.github/workflows/terraform.yml@v1.0.0
     secrets: inherit
     with:
       path: "infra"
