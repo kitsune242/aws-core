@@ -8,6 +8,9 @@ on:
 
 jobs:
   terraform-plan:
+    permissions:
+      id-token: write
+      contents: read
     uses: kitsune242/aws-common/.github/workflows/terraform.yml@v1.0.0
     secrets: inherit
     with:
