@@ -10,6 +10,7 @@ module "landing_zone" {
   source                     = "git::https://github.com/kitsune242/aws-common.git//infra/modules/s3_bucket?ref=v1.0.0"
   bucket_name                = "${var.project_name}-landing-${var.region}-${var.environment}"
   sns_notification_topic_arn = module.landing_data_notification.topic_arn
+  enable_notification        = true
   tags = {
     Zone        = "Landing"
     Environment = var.environment
@@ -28,6 +29,7 @@ module "raw_zone" {
   source                     = "git::https://github.com/kitsune242/aws-common.git//infra/modules/s3_bucket?ref=v1.0.0"
   bucket_name                = "${var.project_name}-raw-${var.region}-${var.environment}"
   sns_notification_topic_arn = module.raw_data_notification.topic_arn
+  enable_notification        = true
   tags = {
     Zone        = "Raw"
     Environment = var.environment
