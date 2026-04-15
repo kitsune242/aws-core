@@ -1,0 +1,17 @@
+name: "CI for Core"
+
+on:
+  pull_request:
+    paths:
+      - 'infra/**'
+      - 'api/**'
+
+jobs:
+  terraform-plan:
+    uses: roche-oli/oli-poc-common/.github/workflows/terraform.yml@v1.0.0
+    secrets: inherit
+    with:
+      path: "infra"
+      env: dev
+      action: "plan"
+      common_ref: "v1.0.0"
